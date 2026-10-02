@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "ok": false,
+  "command": "finalize",
+  "status": "skipped",
+  "type": "architecture",
+  "quality": "showcase",
+  "specification": {
+    "path": "/workspaces/remotion-demo/.archify/architecture-remotion-core-20261002-000000/candidate.json",
+    "sha256": "f0b59b6640adaa2fc5dbd936f253b4ec7a44b3af44f7388fedd329082808b8d5",
+    "bytes": 4763
+  },
+  "artifact": {
+    "path": "/workspaces/remotion-demo/.archify/architecture-remotion-core-20261002-000000/remotion-core.html",
+    "sha256": "7c8d23b176a1a70cd961d073a19c53a2d7773fb34056cbcc2c60087f7c0ee5e6",
+    "bytes": 770396
+  },
+  "gates": {
+    "validate": "pass",
+    "deliver": "pass",
+    "check": "pass",
+    "browser-check": "skipped"
+  },
+  "failedStage": "browser-check",
+  "diagnostics": [
+    {
+      "code": "viewer/chrome-unavailable",
+      "severity": "warning",
+      "message": "Chrome or Chromium is unavailable. Set ARCHIFY_CHROME to its executable path.",
+      "subject": {
+        "artifact": "/workspaces/remotion-demo/.archify/architecture-remotion-core-20261002-000000/remotion-core.html"
+      },
+      "evidence": {
+        "executable": null
+      },
+      "supportedFixes": [
+        "set ARCHIFY_CHROME to a Chrome or Chromium executable and rerun browser-check"
+      ]
+    }
+  ],
+  "diagnosticSummary": {
+    "total": 1,
+    "shown": 1,
+    "truncated": false
+  },
+  "evidence": {
+    "receipt": "/workspaces/remotion-demo/.archify/architecture-remotion-core-20261002-000000/remotion-core.finalize.json",
+    "summaryReceipt": "/workspaces/remotion-demo/.archify/architecture-remotion-core-20261002-000000/remotion-core.finalize-summary.json",
+    "browserCheckReceipt": "/workspaces/remotion-demo/.archify/architecture-remotion-core-20261002-000000/remotion-core.browser-check.json"
+  },
+  "update": {
+    "status": "current",
+    "installedVersion": "3.0.1",
+    "availableVersion": "3.0.1",
+    "releaseNotes": null,
+    "checkedAt": "2026-10-02T03:19:55.550Z",
+    "source": "cache",
+    "noticeRequired": false,
+    "noticeText": null
+  },
+  "visualReview": "not-requested",
+  "durationMs": 1037
+}

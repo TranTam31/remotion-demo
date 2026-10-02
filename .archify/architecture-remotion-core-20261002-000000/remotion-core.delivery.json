@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "receiptId": "acbb74e6-7e30-4128-a493-69336dbc2b53",
+  "status": "current",
+  "command": "deliver",
+  "type": "architecture",
+  "input": "/workspaces/remotion-demo/.archify/architecture-remotion-core-20261002-000000/candidate.json",
+  "output": "/workspaces/remotion-demo/.archify/architecture-remotion-core-20261002-000000/remotion-core.html",
+  "specification": {
+    "sha256": "f0b59b6640adaa2fc5dbd936f253b4ec7a44b3af44f7388fedd329082808b8d5",
+    "bytes": 4763
+  },
+  "artifact": {
+    "sha256": "7c8d23b176a1a70cd961d073a19c53a2d7773fb34056cbcc2c60087f7c0ee5e6",
+    "bytes": 770396
+  }
+}

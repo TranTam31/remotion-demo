@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "Remotion Core Rendering Architecture",
+    "subtitle": "From React composition to deterministic frames and encoded video",
+    "locale": "en",
+    "output": ".archify/architecture-remotion-core-20261002-000000/remotion-core.html",
+    "animation": "trace",
+    "quality_profile": "showcase"
+  },
+  "components": [
+    { "id": "author", "type": "external", "label": "Developer", "sublabel": "Composition code", "pos": [40, 310], "size": [120, 60], "icon": "person" },
+    { "id": "cli", "type": "backend", "label": "Remotion CLI", "sublabel": "render / studio / player", "pos": [220, 310], "size": [130, 60], "tag": "Node.js", "icon": "backend" },
+    { "id": "composition", "type": "frontend", "label": "Composition", "sublabel": "React component tree", "pos": [410, 310], "size": [130, 60], "icon": "frontend" },
+    { "id": "timeline", "type": "backend", "label": "Timeline model", "sublabel": "frame · fps · duration", "pos": [600, 310], "size": [130, 60], "icon": "clock" },
+    { "id": "renderer", "type": "backend", "label": "Render coordinator", "sublabel": "frame scheduling", "pos": [790, 310], "size": [130, 60], "icon": "backend" },
+    { "id": "chromium", "type": "cloud", "label": "Chromium page", "sublabel": "React + DOM + CSS", "pos": [980, 310], "size": [130, 60], "tag": "Headless or interactive", "icon": "cloud" },
+    { "id": "frame", "type": "backend", "label": "Frame capture", "sublabel": "pixels for frame N", "pos": [1170, 310], "size": [130, 60], "icon": "backend" },
+    { "id": "encoder", "type": "backend", "label": "FFmpeg encoder", "sublabel": "video + audio mux", "pos": [1360, 310], "size": [130, 60], "tag": "Codec pipeline", "icon": "backend" },
+    { "id": "output", "type": "external", "label": "Video output", "sublabel": "MP4 / WebM / GIF", "pos": [1550, 310], "size": [130, 60], "icon": "flag" },
+    { "id": "player", "type": "frontend", "label": "Remotion Player", "sublabel": "interactive preview", "pos": [410, 115], "size": [130, 60], "icon": "frontend" },
+    { "id": "assets", "type": "cloud", "label": "Assets", "sublabel": "images · fonts · media", "pos": [980, 510], "size": [130, 60], "icon": "cloud" },
+    { "id": "audio", "type": "backend", "label": "Audio samples", "sublabel": "timed media data", "pos": [1360, 510], "size": [130, 60], "icon": "clock" }
+  ],
+  "boundaries": [
+    { "kind": "region", "label": "Remotion core: Node.js + React orchestration", "wraps": ["cli", "composition", "timeline", "renderer"] },
+    { "kind": "region", "label": "Browser rendering runtime", "wraps": ["chromium", "frame", "assets"] }
+  ],
+  "connections": [
+    { "id": "author-to-cli", "from": "author", "to": "cli", "label": "invoke", "variant": "emphasis" },
+    { "id": "cli-to-composition", "from": "cli", "to": "composition", "label": "load bundle" },
+    { "id": "composition-to-timeline", "from": "composition", "to": "timeline", "label": "timing", "variant": "emphasis" },
+    { "id": "timeline-to-renderer", "from": "timeline", "to": "renderer", "label": "frame plan", "variant": "emphasis" },
+    { "id": "renderer-to-browser", "from": "renderer", "to": "chromium", "label": "set frame N", "variant": "emphasis" },
+    { "id": "browser-to-frame", "from": "chromium", "to": "frame", "label": "pixels", "variant": "emphasis" },
+    { "id": "frame-to-encoder", "from": "frame", "to": "encoder", "label": "frames", "variant": "emphasis" },
+    { "id": "encoder-to-output", "from": "encoder", "to": "output", "label": "encode", "variant": "emphasis" },
+    { "id": "composition-to-player", "from": "composition", "to": "player", "label": "mount preview", "fromSide": "top", "toSide": "bottom" },
+    { "id": "player-to-timeline", "from": "player", "to": "timeline", "label": "seek / play", "fromSide": "right", "toSide": "top", "via": [[580, 145], [665, 145], [665, 280]] },
+    { "id": "assets-to-browser", "from": "assets", "to": "chromium", "label": "load media", "fromSide": "top", "toSide": "bottom" },
+    { "id": "audio-to-encoder", "from": "audio", "to": "encoder", "label": "sample stream", "fromSide": "top", "toSide": "bottom" }
+  ],
+  "cards": [
+    { "dot": "cyan", "title": "Core idea", "items": ["A composition is a React tree evaluated at a specific frame", "Timeline metadata maps time to deterministic frame numbers"] },
+    { "dot": "emerald", "title": "Render loop", "items": ["The coordinator advances frame N and waits for the page to settle", "The browser produces pixels; the encoder assembles the sequence"] },
+    { "dot": "orange", "title": "Two reader surfaces", "items": ["Player keeps the composition interactive for preview", "CLI rendering drives the same composition toward a file"] }
+  ]
+}

@@ -1,0 +1,370 @@
+{
+  "schemaVersion": 1,
+  "ok": false,
+  "command": "finalize",
+  "status": "skipped",
+  "type": "architecture",
+  "quality": "showcase",
+  "startedAt": "2026-10-02T03:20:41.908Z",
+  "specification": {
+    "path": "/workspaces/remotion-demo/.archify/architecture-remotion-core-20261002-000000/candidate.json",
+    "sha256": "f0b59b6640adaa2fc5dbd936f253b4ec7a44b3af44f7388fedd329082808b8d5",
+    "bytes": 4763
+  },
+  "artifact": {
+    "path": "/workspaces/remotion-demo/.archify/architecture-remotion-core-20261002-000000/remotion-core.html",
+    "sha256": "7c8d23b176a1a70cd961d073a19c53a2d7773fb34056cbcc2c60087f7c0ee5e6",
+    "bytes": 770396
+  },
+  "stages": {
+    "validate": {
+      "status": "pass",
+      "exitCode": 0,
+      "durationMs": null,
+      "execution": "embedded-in-deliver",
+      "command": [
+        "/usr/local/share/nvm/versions/node/v24.21.0/bin/node",
+        "/home/codespace/.agents/skills/archify/bin/archify.mjs",
+        "deliver",
+        "architecture",
+        "/workspaces/remotion-demo/.archify/architecture-remotion-core-20261002-000000/candidate.json",
+        "/workspaces/remotion-demo/.archify/architecture-remotion-core-20261002-000000/remotion-core.html",
+        "--quality",
+        "showcase",
+        "--json"
+      ],
+      "receipt": {
+        "schemaVersion": 1,
+        "ok": true,
+        "command": "validate",
+        "specification": {
+          "sha256": "f0b59b6640adaa2fc5dbd936f253b4ec7a44b3af44f7388fedd329082808b8d5",
+          "bytes": 4763
+        },
+        "validation": {
+          "checksPassed": 9,
+          "checkCount": 9,
+          "compositionProfile": "showcase",
+          "compositionStatus": "pass",
+          "errors": 0,
+          "warnings": 0
+        }
+      }
+    },
+    "deliver": {
+      "status": "pass",
+      "exitCode": 0,
+      "durationMs": 658,
+      "command": [
+        "/usr/local/share/nvm/versions/node/v24.21.0/bin/node",
+        "/home/codespace/.agents/skills/archify/bin/archify.mjs",
+        "deliver",
+        "architecture",
+        "/workspaces/remotion-demo/.archify/architecture-remotion-core-20261002-000000/candidate.json",
+        "/workspaces/remotion-demo/.archify/architecture-remotion-core-20261002-000000/remotion-core.html",
+        "--quality",
+        "showcase",
+        "--json"
+      ],
+      "receipt": {
+        "schemaVersion": 1,
+        "receiptId": "acbb74e6-7e30-4128-a493-69336dbc2b53",
+        "ok": true,
+        "command": "deliver",
+        "type": "architecture",
+        "input": "/workspaces/remotion-demo/.archify/architecture-remotion-core-20261002-000000/candidate.json",
+        "output": "/workspaces/remotion-demo/.archify/architecture-remotion-core-20261002-000000/remotion-core.html",
+        "specification": {
+          "sha256": "f0b59b6640adaa2fc5dbd936f253b4ec7a44b3af44f7388fedd329082808b8d5",
+          "bytes": 4763
+        },
+        "artifact": {
+          "sha256": "7c8d23b176a1a70cd961d073a19c53a2d7773fb34056cbcc2c60087f7c0ee5e6",
+          "bytes": 770396
+        },
+        "validation": {
+          "checksPassed": 9,
+          "checkCount": 9,
+          "compositionProfile": "showcase",
+          "compositionStatus": "pass",
+          "errors": 0,
+          "warnings": 0
+        },
+        "update": {
+          "status": "unavailable",
+          "installedVersion": null,
+          "availableVersion": null,
+          "releaseNotes": null,
+          "checkedAt": null,
+          "source": null,
+          "noticeRequired": false,
+          "noticeText": null,
+          "reason": "disabled"
+        }
+      }
+    },
+    "check": {
+      "status": "pass",
+      "exitCode": 0,
+      "durationMs": 191,
+      "command": [
+        "/usr/local/share/nvm/versions/node/v24.21.0/bin/node",
+        "/home/codespace/.agents/skills/archify/bin/archify.mjs",
+        "check",
+        "/workspaces/remotion-demo/.archify/architecture-remotion-core-20261002-000000/remotion-core.html",
+        "--require-provenance"
+      ],
+      "receipt": {
+        "ok": true,
+        "file": "/workspaces/remotion-demo/.archify/architecture-remotion-core-20261002-000000/remotion-core.html",
+        "artifact": {
+          "sha256": "7c8d23b176a1a70cd961d073a19c53a2d7773fb34056cbcc2c60087f7c0ee5e6",
+          "bytes": 770396
+        },
+        "checks": [
+          {
+            "name": "single_svg",
+            "ok": true,
+            "details": [
+              "found 1 <svg> block(s)"
+            ]
+          },
+          {
+            "name": "finite_svg",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "orthogonal_arrows",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "label_route_clearance",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "relationship_crossings",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "relationship_corridors",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "container_border_runs",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "route_rhythm",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "legend_clearance",
+            "ok": true,
+            "details": []
+          }
+        ],
+        "composition": {
+          "schemaVersion": 1,
+          "profile": "showcase",
+          "status": "pass",
+          "summary": {
+            "errors": 0,
+            "warnings": 0
+          },
+          "metrics": {
+            "properCrossings": 0,
+            "resolvedCrossovers": 0,
+            "ambiguousCorridors": 0,
+            "arrowheadCollisions": 0,
+            "containerBorderRuns": 0,
+            "labelRouteClearanceIssues": 0,
+            "labelCanvasOverflowIssues": 0,
+            "minLabelRouteClearance": 64.4,
+            "desktopReadabilityIssues": 0,
+            "viewportHeightIssues": 0,
+            "minProjectedNodeTextPx": 6.26046511627907,
+            "maxBends": 1,
+            "routesOverSuggestedBends": 0,
+            "maxStretch": 1,
+            "routesOverSuggestedStretch": 0,
+            "minSegmentPx": 60,
+            "minInteriorSegmentPx": null,
+            "shortSegmentCount": 0,
+            "shortEndpointSegmentCount": 0,
+            "shortInteriorSegmentCount": 0,
+            "microSegmentCount": 0
+          },
+          "suggestedLimits": {
+            "bendsPerRelationship": 2,
+            "stretch": 1.35,
+            "segmentPx": 16,
+            "microSegmentPx": 8
+          },
+          "routeReview": {
+            "crossings": [],
+            "detours": []
+          },
+          "leadingSpace": {
+            "measured": true,
+            "emptyTopPx": 115,
+            "emptyTopRatio": 0.175,
+            "occupiedTop": 115,
+            "viewBoxTop": 0,
+            "canvasHeight": 658,
+            "typicalNodeHeight": 60,
+            "reviewSuggested": false
+          },
+          "desktopReadability": {
+            "budgetBasis": "recognized-declared-wide",
+            "readerContract": "declared-wide-v1",
+            "availableDiagramWidth": 1346,
+            "actualBudgetPx": 1346,
+            "actualReaderWidth": 1376,
+            "desiredReaderWidth": 1642.5,
+            "viewportCap": 1376,
+            "limit": "viewport-cap",
+            "requestedTargetPx": 7.5,
+            "requestedTargetMet": false,
+            "hardFloorPx": 6,
+            "hardFloorMet": true,
+            "minimumOwner": {
+              "kind": "edge",
+              "id": "author-to-cli",
+              "from": "author",
+              "to": "cli"
+            },
+            "minimumSourceTextPx": 8,
+            "minimumProjectedTextPx": 6.26046511627907,
+            "semanticTextCount": 38
+          },
+          "issues": []
+        },
+        "provenance": "current",
+        "deliveryReceiptId": "acbb74e6-7e30-4128-a493-69336dbc2b53"
+      }
+    },
+    "browser-check": {
+      "status": "skipped",
+      "exitCode": 2,
+      "durationMs": 27,
+      "command": [
+        "/usr/local/share/nvm/versions/node/v24.21.0/bin/node",
+        "/home/codespace/.agents/skills/archify/bin/archify.mjs",
+        "browser-check",
+        "/workspaces/remotion-demo/.archify/architecture-remotion-core-20261002-000000/remotion-core.html",
+        "--json",
+        "--require-provenance"
+      ],
+      "execution": "in-process",
+      "receipt": {
+        "schemaVersion": 1,
+        "ok": false,
+        "command": "browser-check",
+        "evidenceKind": "automated-browser",
+        "status": "skipped",
+        "visualReview": "not-requested",
+        "provenance": "current",
+        "deliveryReceiptId": "acbb74e6-7e30-4128-a493-69336dbc2b53",
+        "artifact": {
+          "path": "/workspaces/remotion-demo/.archify/architecture-remotion-core-20261002-000000/remotion-core.html",
+          "sha256": "7c8d23b176a1a70cd961d073a19c53a2d7773fb34056cbcc2c60087f7c0ee5e6",
+          "bytes": 770396
+        },
+        "state": {
+          "detail": "read",
+          "motion": "still"
+        },
+        "chrome": {
+          "status": "unavailable",
+          "executable": null
+        },
+        "diagnostics": [
+          {
+            "code": "viewer/chrome-unavailable",
+            "severity": "warning",
+            "message": "Chrome or Chromium is unavailable. Set ARCHIFY_CHROME to its executable path.",
+            "subject": {
+              "artifact": "/workspaces/remotion-demo/.archify/architecture-remotion-core-20261002-000000/remotion-core.html"
+            },
+            "evidence": {
+              "executable": null
+            },
+            "supportedFixes": [
+              "set ARCHIFY_CHROME to a Chrome or Chromium executable and rerun browser-check"
+            ]
+          }
+        ],
+        "containment": {
+          "status": "skipped",
+          "policy": "fit-or-reader-declared-readable-vertical-scroll",
+          "viewports": []
+        },
+        "themeStates": {
+          "status": "skipped",
+          "viewports": []
+        },
+        "readability": {
+          "status": "skipped",
+          "minimumProjectedNodeTextPx": 6,
+          "viewports": []
+        },
+        "viewerChrome": {
+          "status": "skipped",
+          "viewports": []
+        },
+        "captures": {
+          "status": "not-requested",
+          "screenshots": [],
+          "contactSheet": null
+        },
+        "sidecars": {
+          "receipt": "remotion-core.browser-check.json",
+          "files": []
+        },
+        "error": "Chrome or Chromium is unavailable. Set ARCHIFY_CHROME to its executable path."
+      }
+    }
+  },
+  "diagnostics": [
+    {
+      "code": "viewer/chrome-unavailable",
+      "severity": "warning",
+      "message": "Chrome or Chromium is unavailable. Set ARCHIFY_CHROME to its executable path.",
+      "subject": {
+        "artifact": "/workspaces/remotion-demo/.archify/architecture-remotion-core-20261002-000000/remotion-core.html"
+      },
+      "evidence": {
+        "executable": null
+      },
+      "supportedFixes": [
+        "set ARCHIFY_CHROME to a Chrome or Chromium executable and rerun browser-check"
+      ]
+    }
+  ],
+  "evidence": {
+    "receipt": "/workspaces/remotion-demo/.archify/architecture-remotion-core-20261002-000000/remotion-core.finalize.json",
+    "summaryReceipt": "/workspaces/remotion-demo/.archify/architecture-remotion-core-20261002-000000/remotion-core.finalize-summary.json",
+    "browserCheckReceipt": "/workspaces/remotion-demo/.archify/architecture-remotion-core-20261002-000000/remotion-core.browser-check.json"
+  },
+  "visualReview": "not-requested",
+  "failedStage": "browser-check",
+  "finishedAt": "2026-10-02T03:20:42.945Z",
+  "durationMs": 1037,
+  "update": {
+    "status": "current",
+    "installedVersion": "3.0.1",
+    "availableVersion": "3.0.1",
+    "releaseNotes": null,
+    "checkedAt": "2026-10-02T03:19:55.550Z",
+    "source": "cache",
+    "noticeRequired": false,
+    "noticeText": null
+  }
+}
